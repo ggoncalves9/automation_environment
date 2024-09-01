@@ -19,10 +19,6 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ggoncalves9/automation
 & "$env:TEMP\install-make-modules.ps1"
 ```
 
-- Reverter a política de execução de scripts para restrito;
-```
-Set-ExecutionPolicy Restricted -Scope CurrentUser
-```
 
 -  Utilizar o Make e seus modulos;
 ```
@@ -30,5 +26,11 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ggoncalves9/automation
 & "$env:TEMP\001_make-modules.ps1"
 ```
 
+## WARNING 
+[!ALERT]
+- Reverter a política de execução de scripts para restrito;
+```
+Set-ExecutionPolicy Restricted -Scope CurrentUser
+```
 
 #END
