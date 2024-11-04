@@ -1,4 +1,7 @@
-# automation_environment
+## Automação para configuração de ambientes novos
+
+
+# Windows
 Automatização via script para configuração de ambiente em Windows + WSL e/ou Linux, voltado a atuação DevOps
 
 ### Utilize o passo a passo abaixo para instalação (utilizar step-by-step)
@@ -32,5 +35,7 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ggoncalves9/automation
 ```
 Set-ExecutionPolicy Restricted -Scope CurrentUser
 ```
+
+# Linux
 
 #END
