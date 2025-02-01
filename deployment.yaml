@@ -12,6 +12,10 @@ spec:
       labels:
         app: web-ui
     spec:
+      tolerations:
+        - key: "node.role.kubernetes.io/control-plane"
+          operator: "Exists"
+          effects: "NoSchedule"
       containers:
         - name: web-ui
           image: ggmilesi/open-webui:latest
