@@ -12,7 +12,7 @@ spec:
       labels:
         app: web-ui
     spec:
-      container:
+      containers:
         - name: web-ui
           image: ggmilesi/open-webui:latest
           ports:
