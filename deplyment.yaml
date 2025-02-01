@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-ui
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: web-ui
+  template:
+    metadata:
+      labels:
+        app: web-ui
+    spec:
+      container:
+        - name: web-ui
+          image: ggmilesi/open-webui:latest
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
