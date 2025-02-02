@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-multinode
+  labels:
+    app: app-multinode
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app-multinode
+  template:
+    metadata:
+      labels:
+        app: app-multinode
+    spec:
+      nodeSelector:
+        role: worker-extra
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["sh", "-c", "while true; do echo 'Rodando no nó designado'; sleep 10; done"]
