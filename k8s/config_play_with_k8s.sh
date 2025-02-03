@@ -11,6 +11,8 @@ while true; do
   echo "3) Aplicar website_base (nginx-app)"
   echo "4) Aplicar website_nasa"
   echo "5) Remover taint do master"
+  echo "6) Wordpress e Mysql"
+  echo "7) PGadmin e postgreSQL"
   echo "0) Sair"
   echo "========================================"
   read -p "Escolha uma opção: " opcao
@@ -43,7 +45,14 @@ while true; do
       ;;
     6)
       echo "Removendo taint do master"
-      https://raw.githubusercontent.com/ggoncalves9/automation_environment/refs/heads/main/k8s/wordpress-mysql.yaml
+      kubectl apply -f https://raw.githubusercontent.com/ggoncalves9/automation_environment/refs/heads/main/k8s/wordpress-mysql.yaml
+      read -p "Pressione Enter para continuar..."
+      ;;
+    7)
+      echo "Removendo taint do master"
+      kubectl apply -f https://raw.githubusercontent.com/ggoncalves9/automation_environment/refs/heads/main/k8s/postgres-deployment.yaml && \
+      kubectl apply -f https://raw.githubusercontent.com/ggoncalves9/automation_environment/refs/heads/main/k8s/postgres-pvc.yaml && \
+      kubectl apply -f https://raw.githubusercontent.com/ggoncalves9/automation_environment/refs/heads/main/k8s/pgadmin-deployment.yaml
       read -p "Pressione Enter para continuar..."
       ;;
     0)
