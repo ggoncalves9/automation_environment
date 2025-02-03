@@ -41,6 +41,11 @@ while true; do
       kubectl taint nodes "$(hostname)" node-role.kubernetes.io/control-plane:NoSchedule-
       read -p "Pressione Enter para continuar..."
       ;;
+    6)
+      echo "Removendo taint do master"
+      https://raw.githubusercontent.com/ggoncalves9/automation_environment/refs/heads/main/k8s/wordpress-mysql.yaml
+      read -p "Pressione Enter para continuar..."
+      ;;
     0)
       echo "Saindo..."
       exit 0
