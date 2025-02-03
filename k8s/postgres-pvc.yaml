@@ -8,4 +8,5 @@ spec:
   resources:
     requests:
       storage: 8Gi
-  volumeName: postgres-pv  # Nome do PV específico a ser vinculado (opcional)
+  storageClassName: standard  # Substitua pelo StorageClass disponível no seu cluster
+  #volumeName: postgres-pv  # Nome do PV específico a ser vinculado (opcional)
