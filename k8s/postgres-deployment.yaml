@@ -35,7 +35,6 @@ spec:
             cpu: "1"
         volumeMounts:
         - name: postgres-storage
-          claimName: postgres-pvc
           mountPath: /var/lib/postgresql/data
       volumes:
       - name: postgres-storage
