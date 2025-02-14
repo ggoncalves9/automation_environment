@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gotty
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gotty
+  template:
+    metadata:
+      labels:
+        app: gotty
+    spec:
+      serviceAccountName: gotty-sa  # Precisa de permissão para rodar kubectl
+      containers:
+      - name: gotty
+        image: yudai/gotty:latest
+        args: ["-c", "admin:password", "/bin/bash"]
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: kube-config
+          mountPath: /root/.kube
+      volumes:
+      - name: kube-config
+        hostPath:
+          path: $HOSTNAME/.kube  # Altere conforme seu ambiente
