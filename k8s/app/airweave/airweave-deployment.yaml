@@ -1,0 +1,22 @@
+# airweave-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: airweave-deployment
+  labels:
+    app: airweave
+spec:
+  replicas: 2 # Quantidade de réplicas desejadas
+  selector:
+    matchLabels:
+      app: airweave
+  template:
+    metadata:
+      labels:
+        app: airweave
+    spec:
+      containers:
+      - name: airweave-container
+        image: ghcr.io/airweave-ai/airweave:latest # Substitua pela imagem correta se necessário
+        ports:
+        - containerPort: 80 # Porta que a aplicação está rodando dentro do container
