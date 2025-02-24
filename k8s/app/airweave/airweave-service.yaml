@@ -1,0 +1,14 @@
+# airweave-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: airweave-service
+spec:
+  type: NodePort
+  selector:
+    app: airweave
+  ports:
+  - protocol: TCP
+    port: 80 # Porta exposta pelo service
+    targetPort: 80 # Porta onde o container está rodando
+    nodePort: 30001 # Porta exposta no nó do cluster (opcional, pode ser omitida)
